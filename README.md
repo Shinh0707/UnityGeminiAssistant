@@ -22,6 +22,7 @@
 1.  [Google AI Studio](https://ai.google.dev/aistudio) にアクセスし、APIキーを取得します。
 
 2.  取得したAPIキーを以下のファイルに設定します。
+
     **ファイルパス:** `Assets/Settings/Gemini/secrets_gemini_config.json`
     ```json
     {
@@ -30,6 +31,7 @@
     ```
 
 3.  （任意）ツールに無視させたいフォルダを以下のファイルで指定できます。
+
     **ファイルパス:** `Assets/Settings/Gemini/gemini_config.json`
     ```json
     {
