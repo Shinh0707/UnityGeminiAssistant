@@ -48,9 +48,9 @@ GeminiのREST APIを使用しています。
 
 ## セットアップ手順
 
-1.  [Google AI Studio](https://ai.google.dev/aistudio) にアクセスし、APIキーを取得します。
+1.  [Google AI Studio](https://ai.google.dev/aistudio) にアクセスし、APIキーを取得する。
 
-2.  取得したAPIキーを以下のファイルに設定します。
+2.  取得したAPIキーを以下のファイルに設定する。
 
     **ファイルパス:** `Assets/Settings/Gemini/secrets_gemini_config.json`
     ```json
@@ -59,7 +59,7 @@ GeminiのREST APIを使用しています。
     }
     ```
 
-3.  （任意）ツールの設定を以下のファイルで指定できます。
+3.  （任意）ツールの設定を以下のファイルで指定する。
 
     **ファイルパス:** `Assets/Settings/Gemini/gemini_config.json`
 
@@ -85,13 +85,13 @@ GeminiのREST APIを使用しています。
 
     | キー                         | 型      | 説明                                                                                                                              |
     | ---------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------- |
-    | `GeminiChatWindow_Model`     | `string`  | Geminiチャットウィンドウで使用するモデル名を指定します。モデル名は[Gemini公式ページ](https://ai.google.dev/gemini-api/docs/models/gemini)に従います。                                                     |
-    | `GeminiChat_InstructionFile` | `string`  | チャットAIに与える追加の指示が記述されたマークダウンファイルへのパスを指定します。                                     |
-    | `GeminiChatStateFile`        | `string`  | チャットの状態（会話履歴など）を保存するJSONファイルへのパスを指定します。一時的なファイルがここに保存されます。                    |
-    | `GeminiChatMaxResponseLoop`  | `int`     | AIの応答生成における最大ループ回数を指定します。意図しない無限ループを防ぐための設定です。                                        |
-    | `ProtectedDirectories`       | `array`   | AIによるファイル操作やスキャンから保護する`Assets/`以下のディレクトリのリストを指定します。プロジェクトの重要な設定ファイルや外部ライブラリを保護します。 |
+    | `GeminiChatWindow_Model`     | `string`  | Geminiチャットウィンドウで使用するモデル名を指定。モデル名は[Gemini公式ページ](https://ai.google.dev/gemini-api/docs/models/gemini)に従う。                                                     |
+    | `GeminiChat_InstructionFile` | `string`  | チャットAIに与える追加の指示が記述されたマークダウンファイルへのパスを指定。                                     |
+    | `GeminiChatStateFile`        | `string`  | チャットの状態（会話履歴など）を保存するJSONファイルへのパスを指定。一時的なファイルがここに保存される。                    |
+    | `GeminiChatMaxResponseLoop`  | `int`     | AIの応答生成における最大ループ回数を指定。意図しない無限ループを防ぐための設定。                                        |
+    | `ProtectedDirectories`       | `array`   | AIによるファイル操作やスキャンから保護する`Assets/`以下のディレクトリのリストを指定。プロジェクトの重要な設定ファイルや外部ライブラリを保護する。 |
 
-4. このリポジトリの`Assets`フォルダをUnityProjectのプロジェクトフォルダに入れる
+4. このリポジトリの`Assets`フォルダを、自身のUnityプロジェクトフォルダ内に配置する。
 
 ## 起動方法
 
