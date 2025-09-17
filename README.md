@@ -7,7 +7,8 @@
 
 ## 仕組み
 
-`Function Calling`機能を利用して、Unityエディタの状態を取得・操作します。
+[`Function Calling`](https://ai.google.dev/gemini-api/docs/function-calling)機能を利用して、Unityエディタの状態を取得・操作します。
+
 チャットの状態は `Assets/Temp/Gemini/chat_state.json` に保存されます。このファイルは初回起動時に自動で作成されます。
 
 ## 導入要件
@@ -15,24 +16,22 @@
 -   [NuGetForUnity](https://github.com/GlitchEnzo/NuGetForUnity) の導入
 -   `System.Text.Json` パッケージの導入
 
-（注: 上記パッケージは、Unityの `Packages` フォルダ内に必要なファイルが格納されていれば導入済みです。）
-
 ## セットアップ手順
 
 1.  [Google AI Studio](https://ai.google.dev/aistudio) にアクセスし、APIキーを取得します。
 
 2.  取得したAPIキーを以下のファイルに設定します。
 
-    **ファイルパス:** `Assets/Settings/Gemini/secrets_gemini_config.json`
+    **ファイルパス:** [`Assets/Settings/Gemini/secrets_gemini_config.json`](Assets/Settings/Gemini/secrets_gemini_config.json)
     ```json
     {
-        "GeminiChatWindow_ApiKey":"..."
+        "GeminiChatWindow_ApiKey":"ここに設定する"
     }
     ```
 
 3.  （任意）ツールに無視させたいフォルダを以下のファイルで指定できます。
 
-    **ファイルパス:** `Assets/Settings/Gemini/gemini_config.json`
+    **ファイルパス:** [`Assets/Settings/Gemini/gemini_config.json`](Assets/Settings/Gemini/gemini_config.json)
     ```json
     {
         ...,
@@ -44,7 +43,7 @@
             "Editor/GUI",
             "Editor/Gemini",
             "Editor/Externals",
-            "Temp"
+            "Temp/Gemini"
         ]
     }
     ```
@@ -58,8 +57,4 @@ Unityエディタ上部のメニューから `Tools > Gemini Chat` を選択す�
 ## ライセンス
 
 このプロジェクトは **MITライセンス** の下で公開されています。
-
-これにより、個人利用・商用利用を問わず、誰でも自由に本ソフトウェアの複製、改変、再配布などを行うことができます。
-利用の際は、本ソフトウェアの著作権表示とライセンス条文を、コードの複製物または主要な部分に含める必要があります。
-
 詳細については、プロジェクトに含まれる `LICENSE` ファイルをご確認ください。
