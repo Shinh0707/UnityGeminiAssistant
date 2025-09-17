@@ -100,7 +100,14 @@ InitTestScene*.unity*
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 
-/[Aa]ssets/Settings/Gemini/secrets_gemini_config.json
 /[Aa]ssets/Settings/Gemini/secrets_gemini_config.json.meta
 /[Aa]ssets/Temp/Gemini/chat_state.json
 /[Aa]ssets/Temp/Gemini/chat_state.json.meta
+/[Pp]ackages
+/[Aa]ssets/Packages
+/[Aa]ssets/*.inputactions
+/[Aa]ssets/NuGet.config
+/[Aa]ssets/packages.config
+/[Aa]ssets/Scripts
+/[Aa]ssets/Scenes
+/[Aa]ssets/Plugins

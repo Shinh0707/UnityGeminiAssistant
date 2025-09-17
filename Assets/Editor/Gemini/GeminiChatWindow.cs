@@ -11,6 +11,7 @@ using Tool = Gemini.Api.Tool;
 using System.Text.RegularExpressions;
 using System.Text.Json.Nodes;
 using System.Text.Encodings.Web;
+using NetworkUtility;
 
 namespace Gemini.Editor
 {
@@ -334,24 +335,26 @@ namespace Gemini.Editor
             DrawChatHistory();
             DrawUserInput();
         }
-
         private void DrawGUIButtons()
         {
-            using (new EditorGUILayout.HorizontalScope(GUILayout.Height(30)))
+            using (new EditorGUI.DisabledScope(!NetworkChecker.IsNetworkAvailable))
             {
-                if (GUILayout.Button("Refresh", GUILayout.ExpandHeight(true), GUILayout.ExpandWidth(true)))
+                using (new EditorGUILayout.HorizontalScope(GUILayout.Height(30)))
                 {
-                    _looped = maxLoop;
-                    _isProcessing = false;
-                    ClearState();
-                    SaveState();
-                }
-                using (new EditorGUI.DisabledScope(!(_isProcessing && IsApiConfigured())))
-                {
-                    if (GUILayout.Button("Stop", GUILayout.ExpandHeight(true), GUILayout.ExpandWidth(true)))
+                    if (GUILayout.Button("Refresh", GUILayout.ExpandHeight(true), GUILayout.ExpandWidth(true)))
                     {
                         _looped = maxLoop;
                         _isProcessing = false;
+                        ClearState();
+                        SaveState();
+                    }
+                    using (new EditorGUI.DisabledScope(!(_isProcessing && IsApiConfigured())))
+                    {
+                        if (GUILayout.Button("Stop", GUILayout.ExpandHeight(true), GUILayout.ExpandWidth(true)))
+                        {
+                            _looped = maxLoop;
+                            _isProcessing = false;
+                        }
                     }
                 }
             }
@@ -359,6 +362,16 @@ namespace Gemini.Editor
 
         private void DrawChatHistory()
         {
+            if (!NetworkChecker.IsNetworkAvailable)
+            {
+                using (new EditorGUILayout.VerticalScope(GUILayout.ExpandHeight(true)))
+                {
+                    EditorGUILayout.Space(100, true);
+                    EditorGUILayout.LabelField("ネットワークに接続されていません", EditorStyles.centeredGreyMiniLabel, GUILayout.Height(40));
+                    EditorGUILayout.Space(100, true);
+                }
+                return;
+            }
             _scrollPosition = EditorGUILayout.BeginScrollView(_scrollPosition, GUILayout.ExpandHeight(true));
             foreach (var message in _chatHistory)
             {
@@ -700,7 +713,6 @@ namespace Gemini.Editor
 
         #region Helpers
         private bool IsApiConfigured() => _model != null;
-
         private void InitializeStyles()
         {
             _userMessageStyle = CreateStyle(new Color(0.2f, 0.4f, 0.7f));

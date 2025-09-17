@@ -11,6 +11,6 @@
         "Editor/GUI",
         "Editor/Gemini",
         "Editor/Externals",
-        "Temp"
+        "Temp/Gemini"
     ]
 }
