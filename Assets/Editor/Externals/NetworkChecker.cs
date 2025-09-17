@@ -3,8 +3,8 @@ using System;
 namespace NetworkUtility
 {
     /// <summary>
-    /// アプリケーション全体のネットワーク接続状態をバックグラウンドで監視し、提供します。
-    /// 監視周期は、このクラスのプロパティへのアクセス頻度に応じて動的に調整されます。
+    /// アプリケーション全体のネットワーク接続状態をバックグラウンドで監視し、提供します
+    /// 監視周期は、このクラスのプロパティへのアクセス頻度に応じて動的に調整されます
     /// </summary>
     public static class NetworkChecker
     {
@@ -18,9 +18,9 @@ namespace NetworkUtility
         private static DateTime lastAccessTime = DateTime.MinValue;
 
         /// <summary>
-        /// ネットワーク接続が利用可能かどうかを示す最新の状態を取得します。
+        /// ネットワーク接続が利用可能かどうかを示す最新の状態を取得します
         /// このプロパティへのアクセスは、短時間の連続呼び出しが集約された上で、
-        /// 動的な監視周期の計算に使用されます。
+        /// 動的な監視周期の計算に使用されます
         /// </summary>
         public static bool IsNetworkAvailable
         {
@@ -41,7 +41,7 @@ namespace NetworkUtility
         }
 
         /// <summary>
-        /// NetworkCheckerクラスが初めてアクセスされたときに一度だけ呼び出される静的コンストラクタです。
+        /// NetworkCheckerクラスが初めてアクセスされたときに一度だけ呼び出される静的コンストラクタです
         /// </summary>
         static NetworkChecker()
         {
@@ -52,9 +52,9 @@ namespace NetworkUtility
         }
 
         /// <summary>
-        /// 現在のアクセス数を取得し、アトミックに0にリセットします。
+        /// 現在のアクセス数を取得し、アトミックに0にリセットします
         /// </summary>
-        /// <returns>リセットされる前のアクセス数。</returns>
+        /// <returns>リセットされる前のアクセス数</returns>
         internal static int GetAndResetAccessCount()
         {
             lock (accessLock)

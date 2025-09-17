@@ -456,8 +456,8 @@ namespace Gemini.Editor
 
         /// <summary>
         /// JsonNode内のすべての階層を再帰的に探索し、
-        /// 値がJSONオブジェクト/配列形式の文字列であればパースして置き換えます。
-        /// それ以外の文字列は、標準的なエスケープシーケンスを解除します。
+        /// 値がJSONオブジェクト/配列形式の文字列であればパースして置き換えます
+        /// それ以外の文字列は、標準的なエスケープシーケンスを解除します
         /// </summary>
         /// <param name="node">探索対象のJsonNode</param>
         /// <returns>変換後のJsonNode</returns>

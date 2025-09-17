@@ -24,7 +24,7 @@ namespace Gemini.Core
         private const string SecretConfigFileName = "Settings/Gemini/secrets_gemini_config.json";
 
         /// <summary>
-        /// アクセスが禁止されているディレクトリのリストを取得します。
+        /// アクセスが禁止されているディレクトリのリストを取得します
         /// </summary>
         public static IReadOnlyList<string> ProtectedDirectories => _protectedDirectories.Value;
 

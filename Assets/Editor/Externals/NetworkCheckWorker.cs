@@ -7,9 +7,9 @@ using Timers = System.Timers;
 namespace NetworkUtility
 {
     /// <summary>
-    /// NetworkCheckerのためのバックグラウンドワーカー。
-    /// System.Timers.Timerを使用し、動的な周期でネットワーク状態を確認します。
-    /// このクラスは外部アセンブリから隠蔽されています。
+    /// NetworkCheckerのためのバックグラウンドワーカー
+    /// System.Timers.Timerを使用し、動的な周期でネットワーク状態を確認します
+    /// このクラスは外部アセンブリから隠蔽されています
     /// </summary>
     internal sealed class NetworkCheckWorker : IDisposable
     {
@@ -33,7 +33,7 @@ namespace NetworkUtility
         }
         
         /// <summary>
-        /// ネットワーク監視を開始します。
+        /// ネットワーク監視を開始します
         /// </summary>
         public void Start()
         {
@@ -42,7 +42,7 @@ namespace NetworkUtility
         }
 
         /// <summary>
-        /// タイマーを停止し、リソースを解放します。
+        /// タイマーを停止し、リソースを解放します
         /// </summary>
         public void Dispose()
         {
@@ -58,7 +58,7 @@ namespace NetworkUtility
         }
 
         /// <summary>
-        /// ネットワーク状態を非同期で確認し、結果をNetworkCheckerにセットします。
+        /// ネットワーク状態を非同期で確認し、結果をNetworkCheckerにセットします
         /// </summary>
         private async Task UpdateNetworkStateAsync()
         {
@@ -68,13 +68,13 @@ namespace NetworkUtility
             }
             catch
             {
-                // バックグラウンド処理中の予期せぬ例外でアプリケーションがクラッシュすることを防ぎます。
+                // バックグラウンド処理中の予期せぬ例外でアプリケーションがクラッシュすることを防ぎます
                 NetworkChecker.IsNetworkAvailable = false;
             }
         }
         
         /// <summary>
-        /// ネットワーク確認の周期を、プロパティへのアクセス頻度に応じて調整します。
+        /// ネットワーク確認の周期を、プロパティへのアクセス頻度に応じて調整します
         /// </summary>
         private void AdjustCheckInterval()
         {
@@ -85,10 +85,10 @@ namespace NetworkUtility
                 ? currentInterval * IntervalIncreaseFactor
                 : currentInterval / count;
 
-            // 新しい周期が定義された範囲内に収まるように設定します。
+            // 新しい周期が定義された範囲内に収まるように設定します
             timer.Interval = Math.Clamp(newInterval, MinCheckInterval, MaxCheckInterval);
             
-            // HttpClientのタイムアウトも、新しい周期に合わせて調整します。
+            // HttpClientのタイムアウトも、新しい周期に合わせて調整します
             var newTimeout = TimeSpan.FromMilliseconds(Math.Min(timer.Interval, MaxCheckInterval));
             if (httpClient.Timeout != newTimeout)
             {
@@ -97,11 +97,11 @@ namespace NetworkUtility
         }
 
         /// <summary>
-        /// インターネットへの接続が可能かどうかを非同期で確認します。
+        /// インターネットへの接続が可能かどうかを非同期で確認します
         /// </summary>
-        /// <param name="uri">接続確認に使用するURI。nullの場合はデフォルト値が使用されます。</param>
-        /// <param name="cancellationToken">キャンセル要求を監視するためのトークン。</param>
-        /// <returns>インターネットに接続可能な場合は <c>true</c>、それ以外は <c>false</c>。</returns>
+        /// <param name="uri">接続確認に使用するURInullの場合はデフォルト値が使用されます</param>
+        /// <param name="cancellationToken">キャンセル要求を監視するためのトークン</param>
+        /// <returns>インターネットに接続可能な場合は <c>true</c>、それ以外は <c>false</c></returns>
         public static async Task<bool> IsInternetAvailableAsync(
             Uri uri = null,
             CancellationToken cancellationToken = default)
