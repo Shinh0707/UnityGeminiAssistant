@@ -58,11 +58,11 @@
 
     | キー                         | 型      | 説明                                                                                                                              |
     | ---------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------- |
-    | `GeminiChatWindow_Model`     | `string`  | Geminiチャットウィンドウで使用するモデル名を指定します。                                                                              |
-    | `GeminiChat_InstructionFile` | `string`  | チャットAIに与える追加の指示（Instruction）が記述されたマークダウンファイルへのパスを指定します。                                     |
+    | `GeminiChatWindow_Model`     | `string`  | Geminiチャットウィンドウで使用するモデル名を指定します。モデル名は[Gemini公式ページ](https://ai.google.dev/gemini-api/docs/models#model-variations)に従います。                                                     |
+    | `GeminiChat_InstructionFile` | `string`  | チャットAIに与える追加の指示が記述されたマークダウンファイルへのパスを指定します。                                     |
     | `GeminiChatStateFile`        | `string`  | チャットの状態（会話履歴など）を保存するJSONファイルへのパスを指定します。一時的なファイルがここに保存されます。                    |
     | `GeminiChatMaxResponseLoop`  | `int`     | AIの応答生成における最大ループ回数を指定します。意図しない無限ループを防ぐための設定です。                                        |
-    | `ProtectedDirectories`       | `array`   | AIによるファイル操作やスキャンから保護するディレクトリのリストを指定します。プロジェクトの重要な設定ファイルや外部ライブラリを保護します。 |
+    | `ProtectedDirectories`       | `array`   | AIによるファイル操作やスキャンから保護する`Assets/`以下のディレクトリのリストを指定します。プロジェクトの重要な設定ファイルや外部ライブラリを保護します。 |
 
 ## 起動方法
 

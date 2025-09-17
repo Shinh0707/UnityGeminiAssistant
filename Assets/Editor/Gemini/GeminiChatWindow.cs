@@ -91,7 +91,7 @@ namespace Gemini.Editor
         private string _apiKey = "";
         private Content _systemInstruction = null;
         private string _chatStateTempFile = "";
-        private string _modelName = "gemini-1.5-flash";
+        private string _modelName = "gemini-2.5-flash";
         private string _userInput = "";
         private Vector2 _scrollPosition;
         private bool _isProcessing;
@@ -550,8 +550,6 @@ namespace Gemini.Editor
             if (string.IsNullOrEmpty(text)) return;
 
             EditorGUILayout.LabelField(label, labelStyle);
-            //float height = style.CalcHeight(new GUIContent(text), position.width - 20);
-            //EditorGUILayout.SelectableLabel(text, style, GUILayout.Height(height));
             MarkdownRenderer.Draw(text);
         }
 
