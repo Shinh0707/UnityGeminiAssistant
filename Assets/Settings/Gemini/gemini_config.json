@@ -6,7 +6,6 @@
     "ProtectedDirectories": [
         "Packages",
         "Plugins",
-        "ProjectSettings",
         "Settings/Gemini",
         "Editor/GUI",
         "Editor/Gemini",

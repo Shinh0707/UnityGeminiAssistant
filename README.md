@@ -16,7 +16,7 @@
 ## 導入要件
 
 -   [NuGetForUnity](https://github.com/GlitchEnzo/NuGetForUnity) の導入
--   `System.Text.Json` パッケージの導入
+-   **NuGetForUnity**を用いた`System.Text.Json` パッケージの導入
 
 ## セットアップ手順
 
@@ -37,14 +37,13 @@
 
     ```json
     {
-        "GeminiChatWindow_Model": "gemini-2.5-pro",
+        "GeminiChatWindow_Model":"gemini-2.5-pro",
         "GeminiChat_InstructionFile": "Settings/Gemini/assistant_instruction.md",
         "GeminiChatStateFile": "Temp/Gemini/chat_state.json",
         "GeminiChatMaxResponseLoop": 10,
         "ProtectedDirectories": [
             "Packages",
             "Plugins",
-            "ProjectSettings",
             "Settings/Gemini",
             "Editor/GUI",
             "Editor/Gemini",
