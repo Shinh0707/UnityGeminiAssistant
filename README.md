@@ -65,7 +65,7 @@ GeminiのREST APIを使用しています。
 
     ```json
     {
-        "GeminiChatWindow_Model":"gemini-1.5-pro-latest",
+        "GeminiChatWindow_Model":"gemini-2.5-pro",
         "GeminiChat_InstructionFile": "Settings/Gemini/assistant_instruction.md",
         "GeminiChatStateFile": "Temp/Gemini/chat_state.json",
         "GeminiChatMaxResponseLoop": 10,
